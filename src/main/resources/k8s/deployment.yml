@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jdk-deployment
+  labels:
+    app: jdk
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: jdk
+  template:
+    metadata:
+      labels:
+        app: jdk
+    spec:
+      containers:
+        - name: jdk
+          image: dockerchenmin/redis-session:1.0
+          ports:
+            - containerPort: 8080
