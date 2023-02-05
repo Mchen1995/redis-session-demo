@@ -17,5 +17,6 @@ spec:
       containers:
         - name: jdk
           image: dockerchenmin/redis-session:1.0
+          imagePullPolicy: Always
           ports:
             - containerPort: 8080
